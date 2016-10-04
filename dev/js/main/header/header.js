@@ -55,8 +55,9 @@ jQuery(function($) {
         }
     });
 
-    $(window).on('orientationchange',function() {
+    $(window).on('resize',function() {
         cleanup();
+        console.log("vika");
     });
 
     var mobileMenuAnimationComplete = true;
