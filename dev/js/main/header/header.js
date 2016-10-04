@@ -79,8 +79,8 @@ jQuery(function($) {
 
     if (navbar.length) {
         var offsetTop = navbar.offset().top;
-        $(window).on('orientationchange',function() {
-            if ($(window).width() > 992 && touchSupport) {
+        $(window).on('resize',function() {
+            if ($(window).width() > 992) {
                 var navbarPos = navbar.css('position');
                 offsetTop = $('header').height() - (navbarPos === 'fixed' ? 0 : navbar.outerHeight());
             }
