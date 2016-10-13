@@ -7,6 +7,7 @@
 
         // initialize swiper when document ready
         // http://idangero.us/swiper/api/
+        var play=$('.js__img-slider');
         var swiper = new Swiper('.js__img-slider', {
             nextButton: '.js__img-slider__btn-next',
             prevButton: '.js__img-slider__btn-prev',
@@ -16,7 +17,10 @@
             lazyLoading: true,
             watchSlidesVisibility: true,
             lazyLoadingInPrevNext: true,
-            speed: 600
+            autoplay: play.attr('data-autoplay'),
+            loop:true,
+            speed: 600,
+            autoplayDisableOnInteraction: false
         });
         // Makes it possible to skip between slider images if they have links, using the tab button
         swiper.container.on('focus', 'a', function(e) {
