@@ -10,7 +10,7 @@
         var $elem = $('.js__img-slider');
         $elem.each(function(){
            var time = $(this).attr('data-autoplay');
-           var swiper = new Swiper($(this), {
+           var slider = new Swiper($(this), {
                nextButton: '.js__img-slider__btn-next',
                prevButton: '.js__img-slider__btn-prev',
                pagination: '.js__img-slider__pagination',
@@ -22,21 +22,21 @@
                speed: 600,
                autoplay: time
            });
-        });
-        // Makes it possible to skip between slider images if they have links, using the tab button
-        swiper.container.on('focus', 'a', function(e) {
-            //Index of focused slide
-            var focusIndex = $(e.target).parents('.swiper-slide').index();
-            //Reset scrollLeft set by browser on focus
-            swiper.container.scrollLeft(0);
+           // Makes it possible to skip between slider images if they have links, using the tab button
+           slider.container.on('focus', 'a', function(e) {
+               //Index of focused slide
+               var focusIndex = $(e.target).parents('.swiper-slide').index();
+               //Reset scrollLeft set by browser on focus
+               slider.container.scrollLeft(0);
 
-            // IE fix
-            setTimeout(function() {
-                swiper.container.scrollLeft(0);
-            }, 0);
+               // IE fix
+               setTimeout(function() {
+                   slider.container.scrollLeft(0);
+               }, 0);
 
-            //Slide to focused slide
-            swiper.slideTo(focusIndex);
+               //Slide to focused slide
+               slider.slideTo(focusIndex);
+           });
         });
     });
 
