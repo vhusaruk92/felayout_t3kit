@@ -14,6 +14,14 @@
     position: relative;
 }
 
+.oneCenteredSlide .swiper-container{
+    margin:20px 15px 45px;
+}
+
+.oneCenteredSlide .swiper-slide{
+    text-align:center;
+}
+
 .swiper-container__pagination{
     bottom: -30px;
     width: 100%;
@@ -23,6 +31,12 @@
     margin:0 5px;
 }
 
+@media (min-width: 500px){
+    .oneCenteredSlide .swiper-container{
+        width:500px;
+        margin:20px auto 45px;
+    }
+}
 @media (min-width: 992px){
     .swiper-container__button-prev, .swiper-container__button-next{
         display: block;
