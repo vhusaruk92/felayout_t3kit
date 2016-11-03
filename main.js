@@ -4,6 +4,8 @@
 // Global variables (jshint):
 
 /*global touchSupport*/
+/*global isAndroid*/
+///*global isIOS*/
 // =================================
 
 jQuery(function($) {
@@ -12,6 +14,14 @@ jQuery(function($) {
     var $mainNavigation = $('.js__main-navigation');
     var $openSubMenuLink = $('.js__main-navigation__open-sub-menu-link');
     var $mainNavigationItemsList = $mainNavigation.find('.js__main-navigation__items-list').children('li');
+
+    //var $mainNavigationItemsListSub = ('.main-navigation__item._sub');
+    var $dropdownMenuWithColumns = $('.js__dropdown-menu-with-columns .js__main-navigation__item._sub');
+    if (!touchSupport) {
+        $dropdownMenuWithColumns.hover(function() {
+            $(this).toggleClass('open');
+        });
+    }
 
     // Cleanup function to clean unneeded classes
     var cleanup = function cleanup() {
@@ -24,11 +34,13 @@ jQuery(function($) {
         if ($html.hasClass('mobile-menu-opened')) {
             $html.removeClass('mobile-menu-opened');
         }
-        if ($(window).width() < 992 && !$html.hasClass('mobile-menu-opened')) {
+
+        if (isAndroid && screen.width < 992 && !$html.hasClass('mobile-menu-opened')) {
+            $('.js__navigation__items-wrp').hide();
+        } else if (!isAndroid /* or with 'isIOS' variable instead of '!isAndroid' */ && $(window).width() < 992 && !$html.hasClass('mobile-menu-opened')) {
             $('.js__navigation__items-wrp').hide();
         } else {
             $('.js__navigation__items-wrp').show();
-
         }
     };
 
@@ -37,11 +49,11 @@ jQuery(function($) {
         e.preventDefault();
         // if (touchSupport && $(window).width() > 992) {
         if ($(window).width() > 992) {
-            $mainNavigationItemsList.not($(this).parent()).removeClass('_open-tablet-dropdown');
-            $(this).parent('.main-navigation__item').toggleClass('_open-tablet-dropdown');
+            $mainNavigationItemsList.not($(this).parents()).removeClass('_open-tablet-dropdown');
+            $(this).parents('.main-navigation__item').toggleClass('_open-tablet-dropdown');
         }
         if ($(window).width() < 992) {
-            $(this).parent('.main-navigation__item').toggleClass('_open-mobile-dropdown');
+            $(this).parents('.main-navigation__item').toggleClass('_open-mobile-dropdown');
         }
     });
 
@@ -66,21 +78,24 @@ jQuery(function($) {
 // ====== class fo fixed main navigation bar   =======
 jQuery(function($) {
     var navbar = $('.js__main-navigation');
-    var offsetTop = navbar.offset().top;
-    $(window).on('orientationchange',function() {
-        if ($(window).width() > 992 && touchSupport) {
-            var navbarPos = navbar.css('position');
-            offsetTop = $('header').height() - (navbarPos === 'fixed' ? 0 : navbar.outerHeight());
-        }
-    });
-    $(window).on('load scroll', function() {
-        var scrollPos = $(window).scrollTop();
-        if (scrollPos > offsetTop) {
-            $('body:not(.main-navigation-fixed)').addClass('main-navigation-fixed');
-        } else {
-            $('body.main-navigation-fixed').removeClass('main-navigation-fixed');
-        }
-    });
+
+    if (navbar.length) {
+        var offsetTop = navbar.offset().top;
+        $(window).on('orientationchange',function() {
+            if ($(window).width() > 992 && touchSupport) {
+                var navbarPos = navbar.css('position');
+                offsetTop = $('header').height() - (navbarPos === 'fixed' ? 0 : navbar.outerHeight());
+            }
+        });
+        $(window).on('load scroll', function() {
+            var scrollPos = $(window).scrollTop();
+            if (scrollPos > offsetTop) {
+                $('body:not(.main-navigation-fixed)').addClass('main-navigation-fixed');
+            } else {
+                $('body.main-navigation-fixed').removeClass('main-navigation-fixed');
+            }
+        });
+    }
 });
 
 jQuery(function($) {
@@ -131,38 +146,46 @@ jQuery(function($) {
     'use strict';
 
     // document load event
-    $(document).ready(function() {
+        $(document).ready(function() {
 
-        // initialize swiper when document ready
-        // http://idangero.us/swiper/api/
-        var swiper = new Swiper('.js__img-slider', {
-            nextButton: '.js__img-slider__btn-next',
-            prevButton: '.js__img-slider__btn-prev',
-            pagination: '.js__img-slider__pagination',
-            paginationClickable: true,
-            preloadImages: false,
-            lazyLoading: true,
-            watchSlidesVisibility: true,
-            lazyLoadingInPrevNext: true,
-            speed: 600
-        });
-        // Makes it possible to skip between slider images if they have links, using the tab button
-        swiper.container.on('focus', 'a', function(e) {
-            //Index of focused slide
-            var focusIndex = $(e.target).parents('.swiper-slide').index();
-            //Reset scrollLeft set by browser on focus
-            swiper.container.scrollLeft(0);
+        var $elem = $('.js__img-slider');
+                 $elem.each(function(){
+                    var time = $(this).attr('data-autoplay');
+                    var slider = new Swiper($(this), {
+                        nextButton: '.js__img-slider__btn-next',
+                        prevButton: '.js__img-slider__btn-prev',
+                        pagination: '.js__img-slider__pagination',
+                        paginationClickable: true,
+                        preloadImages: false,
+                        lazyLoading: true,
+                        watchSlidesVisibility: true,
+                        lazyLoadingInPrevNext: true,
+                        speed: 600,
+                        autoplay: time
+                    });
+                    // Makes it possible to skip between slider images if they have links, using the tab button
+                    slider.container.on('focus', 'a', function(e) {
+                         //Index of focused slide
+                        var focusIndex = $(e.target).parents('.swiper-slide').index();
+                        //Reset scrollLeft set by browser on focus
+                        slider.container.scrollLeft(0);
 
-            // IE fix
-            setTimeout(function() {
-                swiper.container.scrollLeft(0);
-            }, 0);
+                     // IE fix
+                     setTimeout(function() {
+                         slider.container.scrollLeft(0);
+                     }, 0);
+                        // IE fix
+                        setTimeout(function() {
+                            slider.container.scrollLeft(0);
+                        }, 0);
 
-            //Slide to focused slide
-            swiper.slideTo(focusIndex);
-        });
-    });
-
+                     //Slide to focused slide
+                     slider.slideTo(focusIndex);
+                        //Slide to focused slide
+                        slider.slideTo(focusIndex);
+                });
+                 });
+     });
 })(jQuery);
 
 (function($) {
@@ -237,6 +260,101 @@ jQuery(function($) {
 
 })(jQuery);
 
+/* global Swiper*/
+(function($) {
+    'use strict';
+
+    // document load event
+        $(document).ready(function() {
+
+            var $swiperContainerWrapper = $('.swiper-container__wrapper');
+            $swiperContainerWrapper.each(function(){
+                $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide"></div>');
+            });
+
+
+            var $swiperContainer = $('.js__swiper-container__container');
+                    $swiperContainer.each(function(){
+                        var time = $(this).attr('data-autoplay');
+                        var loopParam = $(this).attr('data-loop');
+                        var amountOfSlides = $(this).attr('data-slidesPerView');
+                        var effectName = $(this).attr('data-effect');
+                        var width_a;
+                        var width_b;
+                        var width_c;
+                        var width_d;
+                        if( amountOfSlides >= 4){
+                            width_a=1,
+                            width_b=2,
+                            width_c=3,
+                            width_d=4
+                        }else if(amountOfSlides == 2){
+                                width_a=1,
+                                width_b=1,
+                                width_c=1,
+                                width_d=2
+                        }else if(amountOfSlides == 1){
+                                width_a=1,
+                                width_b=1,
+                                width_c=1,
+                                width_d=1
+                        }else{
+                                width_a=1,
+                                width_b=2,
+                                width_c=2,
+                                width_d=3
+                        }
+                        var slider = new Swiper($(this), {
+                            containerModifierClass:'js__swiper-container__container',
+                            wrapperClass:'js__swiper-container__wrapper',
+                            slideClass:'js__swiper-container__slide',
+                            nextButton: $(this).parent().find('.js__swiper-container__btn-next'),
+                            prevButton: $(this).parent().find('.js__swiper-container__btn-prev'),
+                            pagination: $(this).parent().find('.js__swiper-container__pagination'),
+                            paginationClickable: true,
+                            speed: 600,
+                            loop:loopParam,
+                            autoplay: time,
+                            effect:effectName,
+                            watchSlidesVisibility: true,
+                            spaceBetween: 20,
+                            preloadImages: false,
+                            lazyLoading: true,
+                            lazyLoadingInPrevNext: true,
+                            slidesPerView: amountOfSlides,
+                            breakpoints:{
+                                480: {slidesPerView:width_a},
+                                767: {slidesPerView:width_b},
+                                992: {slidesPerView:width_c},
+                                1024:{slidesPerView:width_d}
+                            }
+                            // Responsive breakpoints
+                        });
+                        // Makes it possible to skip between slider images if they have links, using the tab button
+                        slider.container.on('focus', 'a', function(e) {
+                             //Index of focused slide
+                            var focusIndex = $(e.target).parents('.swiper-container_slide').index();
+                            //Reset scrollLeft set by browser on focus
+                            slider.container.scrollLeft(0);
+
+                         // IE fix
+                         setTimeout(function() {
+                             slider.container.scrollLeft(0);
+                            }, 0);
+                            // IE fix
+                            setTimeout(function() {
+                                slider.container.scrollLeft(0);
+                            }, 0);
+
+                         //Slide to focused slide
+                         slider.slideTo(focusIndex);
+                            //Slide to focused slide
+                            slider.slideTo(focusIndex);
+                        });
+                   });
+     });
+})(jQuery);
+
 
 // plugins
 (function($) {
@@ -247,35 +365,37 @@ jQuery(function($) {
 
         // initialize swiper when document ready
         // http://idangero.us/swiper/api/
-        $('.js__news-carousel').swiper({
-            nextButton: '.js__news-carousel__btn-next',
-            prevButton: '.js__news-carousel__btn-prev',
-            pagination: '.js__news-carousel__pagination',
-            paginationClickable: true,
-            slidesPerView: 4,
-            preloadImages: false,
-            spaceBetween: 30,
+        $('.js__news-carousel').each(function() {
+            $(this).swiper({
+                nextButton: $(this).parent().find('.js__news-carousel__btn-next'),
+                prevButton: $(this).parent().find('.js__news-carousel__btn-prev'),
+                pagination: '.js__news-carousel__pagination',
+                paginationClickable: true,
+                slidesPerView: 4,
+                preloadImages: false,
+                spaceBetween: 30,
 
-            // Responsive breakpoints
-            breakpoints: {
+                // Responsive breakpoints
+                breakpoints: {
 
-                // when window width is <= 480px
-                500: {
-                    slidesPerView: 1
-                },
-                // when window width is <= 768px
-                767: {
-                    slidesPerView: 2
-                },
-                // when window width is <= 992px
-                991: {
-                    slidesPerView: 3
-                },
-                // when window width is <= 992px
-                1199: {
-                    slidesPerView: 4
+                    // when window width is <= 480px
+                    500: {
+                        slidesPerView: 1
+                    },
+                    // when window width is <= 768px
+                    767: {
+                        slidesPerView: 2
+                    },
+                    // when window width is <= 992px
+                    991: {
+                        slidesPerView: 3
+                    },
+                    // when window width is <= 992px
+                    1199: {
+                        slidesPerView: 4
+                    }
                 }
-            }
+            });
         });
     });
 
