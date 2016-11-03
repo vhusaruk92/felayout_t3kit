@@ -1,0 +1,71 @@
+<div class="swiperContainer">
+    <div class="swiper-container swiper-container__container js__swiper-container__container" data-autoplay="{{#if this.autoplay}}{{this.autoplay}}{{else}}{{/if}}" data-loop="{{#if this.loop}}{{this.loop}}{{else}}{{/if}}" data-effect="{{#if this.effect}}{{this.effect}}{{else}}slider{{/if}}" data-slidesPerView="{{#if this.slidesPerView}}{{this.slidesPerView}}{{else}}3{{/if}}">
+        <div class="swiper-wrapper swiper-container__wrapper js__swiper-container__wrapper">
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink=false
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+            }}
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink=false
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+            }}
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink=false
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+            }}
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink=false
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+            }}
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink=false
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+            }}
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink=false
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+            }}
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink=false
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+            }}
+        </div>
+    </div>
+    <!-- Add Pagination -->
+    {{#if this.pagination}}
+        <div class="swiper-pagination swiper-container__pagination js__swiper-container__pagination"></div>
+    {{/if}}
+    <!-- Navigation -->
+    {{#if this.button}}
+        <div class="swiper-button-next swiper-container__button-next js__swiper-container__btn-next"></div>
+        <div class=" swiper-button-prev swiper-container__button-prev js__swiper-container__btn-prev"></div>
+    {{/if}}
+</div>
