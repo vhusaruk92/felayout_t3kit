@@ -10,14 +10,14 @@ externalLink: false #just add link (http://link.com) instead of "false" to use t
 <div class="top-content">
     {{>slider}}
 </div>
-<h2 style="text-align:center; color:#288FB4">SC+bigIconTextButton</h2>
+<h3 style="text-align:center; color:#288FB4">SC+bigIconTextButton</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:5, speed:1000, autoplay:3000</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer+bigIconTextButton'
                 button = true
                 pagination=true
                 loop=true
-                effect='slide'
                 slidesPerView = 5
                 speed=1000
                 autoplay=3000
@@ -25,52 +25,84 @@ externalLink: false #just add link (http://link.com) instead of "false" to use t
     </div>
 </div>
 
-<h2 style="text-align:center; color:#288FB4">SC+bigIconTextButton fade effect</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+bigIconTextButton1'
-                button = true
-                pagination=true
-                loop=false
-                effect='fade'
-                slidesPerView = 1
-                oneCenteredSlide = true
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+quote flip effect</h2>
+<h3 style="text-align:center; color:#288FB4">SC+quote</h3>
+<h4 style="text-align:center; color:#288FB4">button, loop; slidesPreView:3</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer+quote'
                 button = true
-                pagination=true
-                loop=false
-                effect='flip'
-                slidesPerView = 1
-                oneCenteredSlide = true
+                pagination=false
+                loop=true
+                slidesPerView = 3
         }}
     </div>
 </div>
-<h2 style="text-align:center; color:#288FB4">SC+imageTextLink</h2>
+
+<h3 style="text-align:center; color:#288FB4">SC+iconTextLink</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:4</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+iconTextLink'
+                button = true
+                pagination=true
+                slidesPerView = 4
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+imageTextLink</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:3, speed:300</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer+imageTextLink'
                 button = true
                 pagination=true
                 loop=true
-                effect='fade'
-                slidesPerView = 1
+                slidesPerView = 3
+                speed=300
         }}
     </div>
 </div>
-<h2 style="text-align:center; color:#288FB4">SC+iconTextLink</h2>
+
+<h3 style="text-align:center; color:#288FB4">SC+effect:"fade"</h3>
+<h4 style="text-align:center; color:#288FB4">paggination, oneCeneterdSlide; slidesPreView:1, speed:1500, effect:"fade"</h4>
 <div class="container">
     <div class="row">
-        {{ renderContent 'swiperContainer+iconTextLink'
-                button = true
+        {{ renderContent 'swiperContainer+bigIconTextButton1'
+                button = false
                 pagination=true
                 loop=false
+                effect='fade'
+                slidesPerView = 1
+                speed=1500
+                oneCenteredSlide = true
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+effect:"flip"</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination, loop, oneCeneterdSlide; slidesPreView:1, autoplay:3000, effect:"flip"</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+quote1'
+                button = true
+                pagination=true
+                loop=true
+                effect='flip'
+                slidesPerView = 1
+                oneCenteredSlide = true
+                autoplay=3000
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+effect:"cube"</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination, oneCeneterdSlide; slidesPreView:1, effect:"cube"</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+iconTextLink1'
+                button = true
+                pagination=true
                 effect='cube'
                 slidesPerView = 1
                 oneCenteredSlide = true
@@ -78,7 +110,8 @@ externalLink: false #just add link (http://link.com) instead of "false" to use t
     </div>
 </div>
 
-<h2 style="text-align:center; color:#288FB4">SC+imageTextCenter</h2>
+<h3 style="text-align:center; color:#288FB4">SC+effect:"coverflow"</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination, oneCeneterdSlide; slidesPreView:1, effect:"coverflow"</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer+imageTextCenter'
@@ -87,129 +120,13 @@ externalLink: false #just add link (http://link.com) instead of "false" to use t
                 loop=false
                 effect='coverflow'
                 slidesPerView = 1
+                oneCenteredSlide = true
         }}
     </div>
 </div>
 
-<h2 style="text-align:center; color:#288FB4">SC+imageTextLeft</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+imageTextLeft'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 1
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+imageTextRight</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+imageTextRight'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 1
-
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+textImageCenter</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+textImageCenter'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 1
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+textImageRight</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+textImageRight'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+textImageLeft</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+textImageLeft'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+inTextLeft</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+inTextLeft'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+inTextRight (nowrap)</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+inTextRight'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+inTextLeft (nowrap)</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+inTextLeft(nowrap)'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+imageGalery</h2>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'swiperContainer+imageGalery'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 1
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+images</h2>
+<h3 style="text-align:center; color:#288FB4">SC+images</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:3</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer+images'
@@ -222,34 +139,155 @@ externalLink: false #just add link (http://link.com) instead of "false" to use t
     </div>
 </div>
 
-<h2 style="text-align:center; color:#288FB4">SC+images1</h2>
+<h3 style="text-align:center; color:#288FB4">SC+images1</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:4</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer+images1'
                 button = true
                 pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 3
+                loop=true
+                slidesPerView = 4
         }}
     </div>
 </div>
 
-<h2 style="text-align:center; color:#288FB4">SC+logo</h2>
+<h3 style="text-align:center; color:#288FB4">SC+logo</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:5, autoplay:3000</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer+logo'
                 button = true
                 pagination=true
                 loop=true
-                effect='slide'
                 slidesPerView = 5
-                autoplay=5000
+                autoplay=3000
         }}
     </div>
 </div>
 
-<h2 style="text-align:center; color:#288FB4">SC+Mix1</h2>
+<h3 style="text-align:center; color:#288FB4">SC+imageTextLeft</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+imageTextLeft'
+                button = true
+                pagination=true
+                loop=false
+                slidesPerView = 2
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+imageTextRight</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:1</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+imageTextRight'
+                button = true
+                pagination=true
+                loop=false
+                slidesPerView = 1
+
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+textImageCenter</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:1</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+textImageCenter'
+                button = true
+                pagination=true
+                loop=false
+                slidesPerView = 1
+        }}
+    </div>
+</div>
+
+<h2 style="text-align:center; color:#288FB4">SC+textImageRight</h2>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+textImageRight'
+                button = true
+                pagination=true
+                loop=false
+                slidesPerView = 2
+        }}
+    </div>
+</div>
+
+<h2 style="text-align:center; color:#288FB4">SC+textImageLeft</h2>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+textImageLeft'
+                button = true
+                pagination=true
+                loop=false
+                slidesPerView = 2
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+inTextLeft</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+inTextLeft'
+                button = true
+                pagination=true
+                loop=false
+                slidesPerView = 2
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+inTextRight (nowrap)</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+inTextRight'
+                button = true
+                pagination=true
+                loop=false
+                slidesPerView = 2
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+inTextLeft (nowrap)</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+inTextLeft(nowrap)'
+                button = true
+                pagination=true
+                loop=false
+                effect='slide'
+                slidesPerView = 2
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+imageGalery</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+imageGalery'
+                button = true
+                pagination=true
+                loop=false
+                effect='slide'
+                slidesPerView = 1
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+Mix1</h3>
+<h4 style="text-align:center; color:#288FB4">button, pagination, autoplay:6000</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer'
@@ -260,14 +298,14 @@ externalLink: false #just add link (http://link.com) instead of "false" to use t
     </div>
 </div>
 
-<h2 style="text-align:center; color:#288FB4">SC+Mix2</h2>
+<h3 style="text-align:center; color:#288FB4">SC+Mix2</h3>
+<h4 style="text-align:center; color:#288FB4">slidesPerView:5</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer'
                 button = false
                 pagination=fasle
                 loop=false
-                effect='slide'
                 slidesPerView = 5
 
         }}
