@@ -17,6 +17,7 @@
                         var loopParam = $(this).attr('data-loop');
                         var amountOfSlides = $(this).attr('data-slidesPerView');
                         var effectName = $(this).attr('data-effect');
+                        var transition = $(this).attr('data-speed');
                         var width_a;
                         var width_b;
                         var width_c;
@@ -50,7 +51,7 @@
                             prevButton: $(this).parent().find('.js__swiper-container__btn-prev'),
                             pagination: $(this).parent().find('.js__swiper-container__pagination'),
                             paginationClickable: true,
-                            speed: 600,
+                            speed: parseInt(transition),
                             loop:loopParam,
                             autoplay: time,
                             effect:effectName,
