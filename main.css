@@ -2974,18 +2974,40 @@ div.awesomplete li[aria-selected="true"] mark {
 .swiperContainer {
   position: relative;
 }
-.oneCenteredSlide .swiper-container {
-  margin: 20px 15px 45px;
-}
-.oneCenteredSlide .swiper-slide {
-  text-align: center;
-}
 .swiper-container__pagination {
   bottom: -30px;
   width: 100%;
 }
 .swiper-container__pagination > .swiper-pagination-bullet {
   margin: 0 5px;
+}
+.oneCenteredSlide .swiper-container {
+  margin: 20px 15px 45px;
+}
+.oneCenteredSlide .swiper-slide {
+  text-align: center;
+}
+.logoSlider .swiper-slide {
+  display: table;
+  height: 80px;
+}
+.logoSliderElem {
+  display: table-cell;
+  vertical-align: middle;
+}
+.logoSliderElem .ce-left .ce-gallery,
+.logoSliderElem .ce-column,
+.logoSliderElem .ce-right .ce-gallery {
+  float: inherit;
+  margin: 0 auto;
+}
+.logoSliderElem .ce-gallery figure {
+  display: block;
+}
+.logoSliderElem .ce-gallery img {
+  max-height: 60px;
+  max-width: 100px;
+  margin: 0 auto;
 }
 @media (min-width: 500px) {
   .oneCenteredSlide .swiper-container {

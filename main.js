@@ -269,12 +269,14 @@ jQuery(function($) {
 
             var $swiperContainerWrapper = $('.swiper-container__wrapper');
             $swiperContainerWrapper.each(function(){
-                $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide"></div>');
+                if($(this).is('.logoSlider')){
+                    $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide"><div class="logoSliderElem"></div></div>');
+                }else{
+                    $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide"></div>');
+                }
             });
-
-
             var $swiperContainer = $('.js__swiper-container__container');
-                    $swiperContainer.each(function(){
+            $swiperContainer.each(function(){
                         var time = $(this).attr('data-autoplay');
                         var loopParam = $(this).attr('data-loop');
                         var amountOfSlides = $(this).attr('data-slidesPerView');
