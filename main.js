@@ -263,7 +263,20 @@ jQuery(function($) {
 /* global Swiper*/
 (function($) {
     'use strict';
-
+    $(window).load(function(){
+        var $swiperContainerWraperImage = $('.imageSlider');
+        $swiperContainerWraperImage.each(function(){
+            var maxHeight = 1;
+                $('.imageSliderElem').each(function() {
+                  maxHeight = maxHeight > $(this).outerHeight() ? maxHeight : $(this).outerHeight();
+                  console.log(maxHeight);
+                });
+                console.log(maxHeight + 'hi');
+                $('.imageSliderElem').each(function() {
+                    $(this).height(maxHeight);
+              });
+        });
+    });
     // document load event
         $(document).ready(function() {
 
@@ -271,10 +284,16 @@ jQuery(function($) {
             $swiperContainerWrapper.each(function(){
                 if($(this).is('.logoSlider')){
                     $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide"><div class="logoSliderElem"></div></div>');
+                }else if($(this).is('.imageSlider')){
+                    $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide imageSlider_swiper-container__slide"><div class="imageSliderElem"><div class="imageSliderBox"></div></div></div>');
                 }else{
                     $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide"></div>');
                 }
             });
+
+
+
+
             var $swiperContainer = $('.js__swiper-container__container');
             $swiperContainer.each(function(){
                         var time = $(this).attr('data-autoplay');
@@ -355,7 +374,10 @@ jQuery(function($) {
                             slider.slideTo(focusIndex);
                         });
                    });
+
+
      });
+
 })(jQuery);
 
 

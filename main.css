@@ -2987,6 +2987,11 @@ div.awesomplete li[aria-selected="true"] mark {
 .oneCenteredSlide .swiper-slide {
   text-align: center;
 }
+.imageSliderBox {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .logoSlider .swiper-slide {
   display: table;
   height: 80px;
@@ -2995,18 +3000,25 @@ div.awesomplete li[aria-selected="true"] mark {
   display: table-cell;
   vertical-align: middle;
 }
-.logoSliderElem .ce-left .ce-gallery,
-.logoSliderElem .ce-column,
-.logoSliderElem .ce-right .ce-gallery {
+.imageSliderBox .ce-above .ce-gallery,
+.imageSliderBox .ce-intext.ce-left .ce-gallery,
+.imageSliderBox .ce-below .ce-gallery,
+.imageSliderBox .ce-column,
+.imageSliderBox .ce-intext.ce-right .ce-gallery {
   float: inherit;
-  margin: 0 auto;
+  margin: 0;
+  width: inherit;
 }
-.logoSliderElem .ce-gallery figure {
+.logoSliderElem .ce-gallery figure,
+.imageSliderBox .ce-gallery figure {
   display: block;
 }
 .logoSliderElem .ce-gallery img {
   max-height: 60px;
   max-width: 100px;
+  margin: 0 auto;
+}
+.imageSliderBox .ce-gallery img {
   margin: 0 auto;
 }
 @media (min-width: 500px) {
