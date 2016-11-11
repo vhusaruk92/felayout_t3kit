@@ -152,8 +152,22 @@ externalLink: false #just add link (http://link.com) instead of "false" to use t
     </div>
 </div>
 
+<h3 style="text-align:center; color:#288FB4">SC+images2</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:4</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+images2'
+                button = true
+                pagination=true
+                loop=true
+                slidesPerView = 4
+                imageSlider=true
+        }}
+    </div>
+</div>
+
 <h3 style="text-align:center; color:#288FB4">SC+logo</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:5, autoplay:3000</h4>
+<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:5, autoplay:3000 +logoSlider class</h4>
 <div class="container">
     <div class="row">
         {{ renderContent 'swiperContainer+logo'
@@ -162,6 +176,21 @@ externalLink: false #just add link (http://link.com) instead of "false" to use t
                 loop=true
                 slidesPerView = 5
                 logoSlider=true
+                autoplay=3000
+        }}
+    </div>
+</div>
+
+<h3 style="text-align:center; color:#288FB4">SC+logo</h3>
+<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:5, autoplay:3000 +imageSlider class</h4>
+<div class="container">
+    <div class="row">
+        {{ renderContent 'swiperContainer+imageSliderclass'
+                button = true
+                pagination=true
+                loop=true
+                slidesPerView = 5
+                imageSlider=true
                 autoplay=3000
         }}
     </div>
