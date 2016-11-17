@@ -1,38 +1,15 @@
 /* global Swiper*/
 (function($) {
     'use strict';
-    $(window).load(function(){
-        var $swiperContainerWraperImage = $('.imageSlider');
-        $swiperContainerWraperImage.each(function(){
-            var maxHeight = 1;
-                $('.imageSliderElem').each(function() {
-                  maxHeight = maxHeight > $(this).outerHeight() ? maxHeight : $(this).outerHeight();
-                  console.log(maxHeight);
-                });
-                console.log(maxHeight + 'hi');
-                $('.imageSliderElem').each(function() {
-                    $(this).height(maxHeight);
-              });
-        });
-    });
     // document load event
         $(document).ready(function() {
 
-            var $swiperContainerWrapper = $('.swiper-container__wrapper');
+            var $swiperContainerWrapper = $('.slider-container__wrapper');
             $swiperContainerWrapper.each(function(){
-                if($(this).is('.logoSlider')){
-                    $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide"><div class="logoSliderElem"></div></div>');
-                }else if($(this).is('.imageSlider')){
-                    $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide imageSlider_swiper-container__slide"><div class="imageSliderElem"><div class="imageSliderBox"></div></div></div>');
-                }else{
-                    $(this).children().wrap('<div class="swiper-slide swiper-container__slide js__swiper-container__slide"></div>');
-                }
+                $(this).children().wrap('<div class="swiper-slide slider-container__slide js__slider-container__slide"></div>');
             });
 
-
-
-
-            var $swiperContainer = $('.js__swiper-container__container');
+            var $swiperContainer = $('.js__slider-container__container');
             $swiperContainer.each(function(){
                         var time = $(this).attr('data-autoplay');
                         var loopParam = $(this).attr('data-loop');
@@ -65,12 +42,12 @@
                                 width_d=3
                         }
                         var slider = new Swiper($(this), {
-                            containerModifierClass:'js__swiper-container__container',
-                            wrapperClass:'js__swiper-container__wrapper',
-                            slideClass:'js__swiper-container__slide',
-                            nextButton: $(this).parent().find('.js__swiper-container__btn-next'),
-                            prevButton: $(this).parent().find('.js__swiper-container__btn-prev'),
-                            pagination: $(this).parent().find('.js__swiper-container__pagination'),
+                            containerModifierClass:'js__slider-container__container',
+                            wrapperClass:'js__slider-container__wrapper',
+                            slideClass:'js__slider-container__slide',
+                            nextButton: $(this).parent().find('.js__slider-container__btn-next'),
+                            prevButton: $(this).parent().find('.js__slider-container__btn-prev'),
+                            pagination: $(this).parent().find('.js__slider-container__pagination'),
                             paginationClickable: true,
                             speed: parseInt(transition),
                             loop:loopParam,
@@ -87,13 +64,31 @@
                                 767: {slidesPerView:width_b},
                                 992: {slidesPerView:width_c},
                                 1024:{slidesPerView:width_d}
+                            },
+                            coverflow: {
+                                rotate: 90,
+                                stretch: 0,
+                                depth: 200,
+                                modifier: 1,
+                                slideShadows : false
+                            },
+                            cube: {
+                                slideShadows : false,
+                                shadow: false
+                            },
+                            fade: {
+                                crossFade: true
+                            },
+                            flip:{
+                                slideShadows : false
                             }
+
                             // Responsive breakpoints
                         });
                         // Makes it possible to skip between slider images if they have links, using the tab button
                         slider.container.on('focus', 'a', function(e) {
                              //Index of focused slide
-                            var focusIndex = $(e.target).parents('.swiper-container_slide').index();
+                            var focusIndex = $(e.target).parents('.slider-container__slide').index();
                             //Reset scrollLeft set by browser on focus
                             slider.container.scrollLeft(0);
 
