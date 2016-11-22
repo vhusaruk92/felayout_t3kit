@@ -1,0 +1,70 @@
+---
+#layout: default.hbs #by default it is default.hbs, but you can specify another one
+title: Slider Container #title in menu
+position: 8 #position in menu
+hideInMenu: false #if true, will be hidden in menu
+hideInBreadcrumbs: false #if true, will be hidden in breadcrumbs
+externalLink: false #just add link (http://link.com) instead of "false" to use this page like a link to external page.
+---
+
+{{> breadcrumbs}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>SliderContainer+bigIconTextButton</h3>
+            <h4>loop, slidesPreView:5, speed:1sec, autoplay:3sec</h4>
+                    {{ renderContent 'sliderContainer_bigIconTextButton'
+                            button = true
+                            pagination=true
+                            loop=true
+                            slidesPerView = 5
+                            speed=1000
+                            autoplay=3000
+                    }}
+            <h3>SliderContainer+quote</h3>
+            <h4>paggination:false, loop</h4>
+                    {{ renderContent 'sliderContainer_quote'
+                            button = true
+                            pagination=false
+                            loop=true
+                    }}
+
+            <h3>SliderContainer+iconTextLink</h3>
+            <h4>speed:0.3sec</h4>
+                    {{ renderContent 'sliderContainer_iconTextLink'
+                            button = true
+                            pagination=true
+                            speed=300
+
+                    }}
+
+            <h3>SliderContainer+imageTextLink</h3>
+            <h4>loop, slidesPreView:2, speed:300</h4>
+                    {{ renderContent 'sliderContainer_imageTextLink'
+                            button = true
+                            pagination=true
+                            loop=true
+                            slidesPerView = 2
+                            speed=300
+                    }}
+
+            <h3>SliderContainer+images(lightbox)</h3>
+            <h4>loop, slidesPreView:4</h4>
+                    {{ renderContent 'sliderContainer_images'
+                            button = true
+                            pagination=true
+                            loop=true
+                            slidesPerView = 4
+                    }}
+            <h3>SliderContainer+TextAndMedia</h3>
+            <h4>slidesPreView:2</h4>
+                    {{ renderContent 'sliderContainer_TextAndMedia'
+                            button = true
+                            pagination=true
+                            loop=false
+                            slidesPerView = 2
+                    }}
+        </div>
+    </div>
+</div>
