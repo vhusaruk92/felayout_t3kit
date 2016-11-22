@@ -10,334 +10,310 @@ externalLink: false #just add link (http://link.com) instead of "false" to use t
 <div class="top-content">
     {{>slider}}
 </div>
-<h3 style="text-align:center; color:#288FB4">SC+bigIconTextButton</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:5, speed:1000, autoplay:3000</h4>
+
 <div class="container">
     <div class="row">
-        {{ renderContent 'sliderContainer+bigIconTextButton'
-                button = true
-                pagination=true
-                loop=true
-                slidesPerView = 5
-                speed=1000
-                autoplay=3000
-        }}
+        <div class="col-md-4">
+            {{ renderContent 'bigIconTextButton'
+                bigTopIcon="now_widgets"
+                header="Content element 1"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                buttonName="Read more"
+                btnAsLink=false
+                wholeAreaLink="#background-link"
+            }}
+        </div>
+        <div class="col-md-4">
+            {{ renderContent 'bigIconTextButton'
+                bigTopIcon="devices"
+                header="Content element 1"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                buttonName="Read more"
+                btnAsLink=false
+            }}
+        </div>
+        <div class="col-md-4">
+            {{ renderContent 'bigIconTextButton'
+                bigTopIcon="equalizer"
+                header="Content element 1"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                buttonName="Read more"
+                btnAsLink=false
+            }}
+        </div>
     </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+quote</h3>
-<h4 style="text-align:center; color:#288FB4">button, loop; slidesPreView:3</h4>
 <div class="container">
     <div class="row">
-        {{ renderContent 'sliderContainer+quote'
-                button = true
-                pagination=false
-                loop=true
-                slidesPerView = 3
-        }}
+        <div class="col-md-12">
+            {{ renderContent 'divider'
+                icon="devices"
+            }}
+        </div>
     </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+iconTextLink</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:4</h4>
 <div class="container">
     <div class="row">
-        {{ renderContent 'sliderContainer+iconTextLink'
-                button = true
-                pagination=true
-                slidesPerView = 4
-        }}
+        <div class="col-md-4">
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink="/"
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+                wholeAreaLink="#background-link"
+            }}
+        </div>
+        <div class="col-md-4">
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink="/"
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+            }}
+        </div>
+        <div class="col-md-4">
+            {{ renderContent 'imageTextLink'
+                imgSrc="images/foto1.jpg"
+                imgLink="/"
+                header="Content element 2"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                linkName="Read more"
+                linkAsBtn=false
+            }}
+        </div>
     </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+imageTextLink</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:3, speed:300</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+imageTextLink'
-                button = true
-                pagination=true
-                loop=true
-                slidesPerView = 3
-                speed=300
-        }}
+
+<div class="parallax parallax-video" data-jarallax-video="https://www.youtube.com/watch?v=ab0TSkLe-E0" style=" background-image: url('images/temp-carousel-3.jpg'); height:auto;">
+    <div class="inverse">
+    <div id="c181" class="container ">
+        <div class="row">
+            <div class="col1  col-md-8 one-column-align-center">
+                <div class="blue-mountaih-header">
+                    <div id="c183" class="text-center margin-top-70">
+                        <h2>Lorem ipsum dolor sit amet markum</h2>
+                    </div>
+                </div>
+                <div id="c183" class="text-center">
+                    <div class="ce-textpic ce-right ce-intext">
+                        <div class="ce-bodytext">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu.</p>
+                        </div>
+                    </div>
+                </div>
+                {{ renderContent 'bigIconTextButton'
+                    bigTopIcon="equalizer"
+                    header="Content element 1"
+                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                    buttonName="Read more"
+                    btnAsLink=false
+                }}
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+effect:"fade"</h3>
-<h4 style="text-align:center; color:#288FB4">paggination, oneCeneterdSlide; slidesPreView:1, speed:1500, effect:"fade"</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+bigIconTextButton1'
-                button = false
-                pagination=true
-                loop=false
-                effect='fade'
-                slidesPerView = 1
-                speed=1500
-                oneCenteredSlide = true
-        }}
+<div class="parallax parallax-img" style="background-image: url('images/parallax_image.jpg'); height:auto;">
+    <div class="inverse">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {{ renderContent 'iconTextButton'
+                    headerLeftIcon="access_time"
+                    header="Content element 1"
+                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                    buttonName="Read more"
+                    btnAsLink=false
+                    wholeAreaLink="#background-link"
+                }}
+            </div>
+            <div class="col-md-4">
+                {{ renderContent 'iconTextButton'
+                    headerLeftIcon="settings"
+                    header="Content element 1"
+                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                    buttonName="Read more"
+                    btnAsLink=true
+                }}
+            </div>
+            <div class="col-md-4">
+                {{ renderContent 'iconTextButton'
+                    headerLeftIcon="school"
+                    header="Content element 1"
+                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                    buttonName="Read more"
+                    btnAsLink=false
+                }}
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+effect:"flip"</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, loop, oneCeneterdSlide; slidesPreView:1, autoplay:3000, effect:"flip"</h4>
+
+
+
+<div class="gray-background">
 <div class="container">
     <div class="row">
-        {{ renderContent 'sliderContainer+quote1'
-                button = true
-                pagination=true
-                loop=true
-                effect='flip'
-                slidesPerView = 1
-                oneCenteredSlide = true
-                autoplay=3000
-        }}
+        <div class="col-md-4">
+            {{ renderContent 'iconTextButton'
+                headerLeftIcon="access_time"
+                header="Content element 1"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                buttonName="Read more"
+                btnAsLink=false
+                wholeAreaLink="#background-link"
+            }}
+        </div>
+        <div class="col-md-4">
+            {{ renderContent 'iconTextButton'
+                headerLeftIcon="settings"
+                header="Content element 1 Lorem ipsum dolor"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                buttonName="Read more"
+                btnAsLink=false
+            }}
+        </div>
+        <div class="col-md-4">
+            {{ renderContent 'iconTextButton'
+                headerLeftIcon="school"
+                header="Content element 1"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                buttonName="Read more"
+                btnAsLink=false
+            }}
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {{>newsCarousel}}
+        </div>
     </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+effect:"cube"</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, oneCeneterdSlide; slidesPreView:1, effect:"cube"</h4>
+
 <div class="container">
     <div class="row">
-        {{ renderContent 'sliderContainer+iconTextLink1'
-                button = true
-                pagination=true
-                effect='cube'
-                slidesPerView = 1
-                oneCenteredSlide = true
-        }}
+        <div class="col-md-4">
+            {{ renderContent 'bigIconTextButton'
+                bigTopIcon="now_widgets"
+                header="Content element 1"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                buttonName="Read more"
+                btnAsLink=false
+                wholeAreaLink="#background-link"
+            }}
+        </div>
+        <div class="col-md-4">
+            {{ renderContent 'bigIconTextButton'
+                bigTopIcon="devices"
+                header="Content element 1"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                buttonName="Read more"
+                btnAsLink=false
+            }}
+        </div>
+        <div class="col-md-4">
+            {{ renderContent 'bigIconTextButton'
+                bigTopIcon="equalizer"
+                header="Content element 1"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitfhghfhor. Ut in nulla enim. Phasellus class aptent taciti sociosqu."
+                buttonName="Read more"
+                btnAsLink=false
+            }}
+        </div>
     </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+effect:"coverflow"</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, oneCeneterdSlide; slidesPreView:1, effect:"coverflow"</h4>
+
 <div class="container">
     <div class="row">
-        {{ renderContent 'sliderContainer+imageTextCenter'
-                button = true
-                pagination=true
-                loop=false
-                effect='coverflow'
-                slidesPerView = 1
-                oneCenteredSlide = true
-        }}
+        <div class="col-md-12">
+            {{ renderContent 'divider'
+                icon=false
+            }}
+        </div>
     </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+images  without special class</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:3</h4>
 <div class="container">
     <div class="row">
-        {{ renderContent 'sliderContainer+images'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 3
-        }}
+        <div class="col-md-6">
+        {{ renderContent 'quote'
+                text="Top service. It’s nice to come back. Thank you for the support, efficient and fast. You are true professionals"
+                name="John Doe"
+                title="VP of Marketing"
+                linkText="Royal Trader"
+            }}
+        </div>
+        <div class="col-md-6">
+            {{ renderContent 'quote'
+                    text="Top service. It’s nice to come back. Thank you for the support, efficient and fast. You are true professionals"
+                    name="John Doe"
+                    title="VP of Marketing"
+                    linkText="Royal Trader"
+            }}
+        </div>
     </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+images1 without special class</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:4</h4>
+
+<div class="margin-bottom-40">
 <div class="container">
     <div class="row">
-        {{ renderContent 'sliderContainer+images1'
-                button = true
-                pagination=true
-                loop=true
-                slidesPerView = 4
-        }}
+        <div class="col-md-12">
+            {{>logoCarousel}}
+        </div>
     </div>
 </div>
-
-<h3 style="text-align:center; color:#288FB4">SC+images2 imageSlider=true</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:4</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+images2'
-                button = true
-                pagination=true
-                loop=true
-                slidesPerView = 4
-                imageSlider=true
-        }}
-    </div>
 </div>
 
-<h3 style="text-align:center; color:#288FB4">SC+logo logoSlider=true</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:5, autoplay:3000 +logoSlider class</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+logo'
-                button = true
-                pagination=true
-                loop=true
-                slidesPerView = 5
-                logoSlider=true
-                autoplay=3000
-        }}
-    </div>
-</div>
+{{ renderContent 'parallax'
+        imgSrc="images/parallax_image.jpg"
+        videoLink=false
+        hideInMobile=false
+        height="auto"
+        elements='
+            <div class="inverse">
+            <div id="c181" class="container ">
+                <div class="row">
+                    <div class="col1  col-md-8 one-column-align-center">
+                        <div class="blue-mountaih-header">
+                            <div id="c183" class="text-center ">
+                                <h2>Lorem ipsum dolor sit amet markum</h2>
+                            </div>
+                        </div>
+                        <div id="c183" class="text-center">
+                            <div class="ce-textpic ce-right ce-intext">
+                                <div class="ce-bodytext">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        '
+}}
 
-<h3 style="text-align:center; color:#288FB4">SC+logo imageSlider=true</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination, loop; slidesPreView:5, autoplay:3000 +imageSlider class</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+imageSliderclass'
-                button = true
-                pagination=true
-                loop=true
-                slidesPerView = 5
-                imageSlider=true
-                autoplay=3000
-        }}
-    </div>
-</div>
-
-<h3 style="text-align:center; color:#288FB4">SC+imageTextLeft</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+imageTextLeft'
-                button = true
-                pagination=true
-                loop=false
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h3 style="text-align:center; color:#288FB4">SC+imageTextRight</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:1</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+imageTextRight'
-                button = true
-                pagination=true
-                loop=false
-                slidesPerView = 1
-
-        }}
-    </div>
-</div>
-
-<h3 style="text-align:center; color:#288FB4">SC+textImageCenter</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:1</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+textImageCenter'
-                button = true
-                pagination=true
-                loop=false
-                slidesPerView = 1
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+textImageRight</h2>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+textImageRight'
-                button = true
-                pagination=true
-                loop=false
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h2 style="text-align:center; color:#288FB4">SC+textImageLeft</h2>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+textImageLeft'
-                button = true
-                pagination=true
-                loop=false
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h3 style="text-align:center; color:#288FB4">SC+inTextLeft</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+inTextLeft'
-                button = true
-                pagination=true
-                loop=false
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h3 style="text-align:center; color:#288FB4">SC+inTextRight (nowrap)</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+inTextRight'
-                button = true
-                pagination=true
-                loop=false
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h3 style="text-align:center; color:#288FB4">SC+inTextLeft (nowrap)</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+inTextLeft(nowrap)'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 2
-        }}
-    </div>
-</div>
-
-<h3 style="text-align:center; color:#288FB4">SC+imageGalery</h3>
-<h4 style="text-align:center; color:#288FB4">button, paggination; slidesPreView:2</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer+imageGalery'
-                button = true
-                pagination=true
-                loop=false
-                effect='slide'
-                slidesPerView = 1
-        }}
-    </div>
-</div>
-
-<h3 style="text-align:center; color:#288FB4">SC+Mix1</h3>
-<h4 style="text-align:center; color:#288FB4">button, pagination, autoplay:6000</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer'
-                button = true
-                pagination=true
-                autoplay = 6000
-        }}
-    </div>
-</div>
-
-<h3 style="text-align:center; color:#288FB4">SC+Mix2</h3>
-<h4 style="text-align:center; color:#288FB4">slidesPerView:5</h4>
-<div class="container">
-    <div class="row">
-        {{ renderContent 'sliderContainer'
-                button = false
-                pagination=fasle
-                loop=false
-                slidesPerView = 5
-
-        }}
-    </div>
-</div>
+{{ renderContent 'parallax'
+        imgSrc="images/parallax_image.jpg"
+        videoLink="https://www.youtube.com/watch?v=ab0TSkLe-E0"
+        hideInMobile=false
+        height="200px"
+}}
