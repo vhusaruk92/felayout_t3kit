@@ -13,7 +13,7 @@
             $swiperContainer.each(function() {
                 var time = $(this).attr('data-autoplay');
                 var loopParam = $(this).attr('data-loop');
-                var amountOfSlides = $(this).attr('data-slidesperview');
+                var amountOfSlides = parseInt($(this).attr('data-slidesperview'));
                 var effectName = $(this).attr('data-effect');
                 var transition = $(this).attr('data-speed');
                 var widthForMobile;
