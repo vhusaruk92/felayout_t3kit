@@ -101,12 +101,6 @@
                 setTimeout(function() {
                     slider.container.scrollLeft(0);
                 }, 0);
-                // IE fix
-                setTimeout(function() {
-                    slider.container.scrollLeft(0);
-                }, 0);
-                //Slide to focused slide
-                slider.slideTo(focusIndex);
                 //Slide to focused slide
                 slider.slideTo(focusIndex);
             });
