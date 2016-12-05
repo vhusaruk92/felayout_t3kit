@@ -88,7 +88,8 @@
                     crossFade: true
                 },
                 flip: {
-                    slideShadows: false
+                    slideShadows: false,
+                    limitRotation: true
                 }
             });
             // Makes it possible to skip between slider images if they have links, using the tab button
